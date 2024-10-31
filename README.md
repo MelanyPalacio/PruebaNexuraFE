@@ -13,4 +13,4 @@ $ npm run dev
 
 ## Asi se debe ver
 
-![imagen con los vuelos disponibles](img/PantallaCrud.png)
+![Imagen de proyecto final](img/PantallaCrud.png)
