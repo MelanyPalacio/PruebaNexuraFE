@@ -1,8 +1,6 @@
-# Prueba parte frontend
-
 ## Descripcion
 
-Prueba Nexura - CRUD EMPLEADOS. Desarrollado con React, TypeScript, Postman y Docker starter repository.
+Prueba Nexura - CRUD EMPLEADOS. Desarrollado con React, TypeScript, Postgres y Docker starter repository.
 
 ## Copilar e iniciar
 
