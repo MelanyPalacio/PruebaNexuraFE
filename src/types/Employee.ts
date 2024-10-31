@@ -6,5 +6,16 @@ export interface Employee {
     area_id?: number;
     boletin: number;
     descripcion: string;
-    roles?: string[];
+    roles?: Rol[];
+    area?: Area
+  }
+
+  export interface Rol {
+    id: number;
+    nombre: string;
+  }
+
+  export interface Area {
+    id: number;
+    nombre: string;
   }

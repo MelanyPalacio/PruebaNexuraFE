@@ -1,15 +1,6 @@
 import React from 'react';
 import EmployeeRow from './EmployeeRow';
-
-interface Employee {
-  id: string;
-  nombreCompleto: string;
-  email: string;
-  sexo: string;
-  area: string;
-  descripcion: string;
-  roles: string[];
-}
+import { Employee } from '../types/Employee';
 
 interface EmployeeTableProps {
   employees: Employee[];
@@ -20,16 +11,18 @@ interface EmployeeTableProps {
 const EmployeeTable: React.FC<EmployeeTableProps> = ({ employees, onEdit, onDelete }) => (
   <div className="table-responsive">
     <table className="table table-striped">
-      <thead>
-        <tr>
-          <th>Nombre Completo</th>
-          <th>Email</th>
-          <th>Sexo</th>
-          <th>Área</th>
-          <th>Roles</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
+    <thead>
+  <tr>
+    <th><i className="fas fa-user" /> Nombre Completo</th>
+    <th><i className="fas fa-envelope" /> Email</th>
+    <th><i className="fas fa-venus-mars" /> Sexo</th>
+    <th><i className="fas fa-briefcase" /> Área</th>
+    <th><i className="fas fa-user-shield" /> Roles</th>
+    <th><i className="fas fa-newspaper" /> Boletín</th>
+    <th><i className="fas fa-cogs" /> Acciones</th>
+  </tr>
+</thead>
+
       <tbody>
         {employees.map((employee) => (
           <EmployeeRow

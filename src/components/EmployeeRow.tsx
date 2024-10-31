@@ -9,13 +9,22 @@ interface EmployeeRowProps {
   onDelete: () => void;
 }
 
-const EmployeeRow: React.FC<EmployeeRowProps> = ({ employee, onEdit, onDelete }) => (
+const EmployeeRow: React.FC<EmployeeRowProps> = ({ employee, onEdit, onDelete }) => {
+  return (
   <tr>
     <td>{employee.nombre}</td>
     <td>{employee.email}</td>
     <td>{employee.sexo === 'M' ? 'Masculino' : 'Femenino'}</td>
-    <td>{employee.area_id}</td>
-    <td>{employee.roles}</td>
+    <td>{employee.area?.nombre}</td>
+    <td>
+      {employee.roles?.map((rol, index) => (
+        <span key={rol.id}>
+          {rol.nombre}{index < employee.roles.length - 1 && ', '}
+        </span>
+      ))}
+    </td>
+    <td>{employee.boletin === 1 ? 'Si' : 'No'}</td>
+
     <td>
       <button onClick={onEdit} className="btn btn-warning btn-sm me-2">
         <i className="fas fa-edit me-1"></i> Editar
@@ -26,5 +35,5 @@ const EmployeeRow: React.FC<EmployeeRowProps> = ({ employee, onEdit, onDelete })
     </td>
   </tr>
 );
-
+}
 export default EmployeeRow;
